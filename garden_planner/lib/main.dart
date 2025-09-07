@@ -63,7 +63,7 @@ class OnboardPage extends StatelessWidget {
                 SizedBox(height:40),
                 ElevatedButton(
                   onPressed: () {
-                    
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const SigninPage()));
                   },
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(200, 60), // width, height
@@ -121,7 +121,7 @@ class _SignUpPageState extends State<SignUpPage>{
               ),
             ),
             
-            SizedBox(height: 50),
+            SizedBox(height: 150),
             TextField(
               controller: _emailController,
               decoration: InputDecoration(
@@ -154,6 +154,90 @@ class _SignUpPageState extends State<SignUpPage>{
               ),
               child: Text('Create Account'),
               
+            ),
+            SizedBox(height:20),
+            Text("or"),
+            SizedBox(height:20),
+            ElevatedButton.icon(onPressed: (){
+              }, 
+              label: Text('Sign up with Google'), icon: Image.asset('assets/icons/googleloginlogo.jpg', height:54, width:54,),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+// -- log in page
+class SigninPage extends StatefulWidget{
+  const SigninPage({super.key});
+
+  @override
+  State<SigninPage> createState() => _SigninPageState();
+}
+class _SigninPageState extends State<SigninPage>{
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
+  @override
+  Widget build(BuildContext context){
+    
+    return Scaffold(
+      backgroundColor: backgroundColor,
+      body: Center(
+        child: Column(
+          children: [
+            SizedBox(height:100),
+            SizedBox(
+              width: 200, // desired width
+              height:200, // desired height
+              child: Image.asset(
+                'assets/icons/icon-blueberry.png',
+                fit: BoxFit.contain, // or BoxFit.cover, etc.
+              ),
+            ),
+            
+            SizedBox(height: 150),
+            TextField(
+              controller: _emailController,
+              decoration: InputDecoration(
+                
+                labelText: 'Enter your email',
+              ),
+            ),
+            SizedBox(height: 20),
+            TextField(
+              controller: _passwordController,
+              decoration: InputDecoration(
+                
+                labelText: 'Enter your password',
+              ),
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const HomePage()),
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue,
+                foregroundColor: Colors.white,
+                minimumSize: Size(200, 60), 
+                textStyle: TextStyle(fontSize: 24), 
+                
+              ),
+              child: Text('Sign In'),
+              
+            ),
+            SizedBox(height:20),
+            Text("or"),
+            SizedBox(height:20),
+
+            ElevatedButton.icon(onPressed: (){
+              }, 
+              label: Text('Sign in with Google'), icon: Image.asset('assets/icons/googleloginlogo.jpg', height:54, width:54,),
             ),
           ],
         ),
