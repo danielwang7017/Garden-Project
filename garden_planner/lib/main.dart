@@ -113,11 +113,11 @@ class _SignUpPageState extends State<SignUpPage>{
           children: [
             SizedBox(height:100),
             SizedBox(
-              width: 200, // desired width
-              height:200, // desired height
+              width: 200, 
+              height:200, 
               child: Image.asset(
                 'assets/icons/icon-blueberry.png',
-                fit: BoxFit.contain, // or BoxFit.cover, etc.
+                fit: BoxFit.contain, 
               ),
             ),
             
@@ -139,12 +139,31 @@ class _SignUpPageState extends State<SignUpPage>{
             ),
             SizedBox(height: 20),
             ElevatedButton(
-              onPressed: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const HomePage()),
-                );
-              },
+              onPressed: () => showDialog<String>(
+                context: context, 
+                builder: (BuildContext context) => Dialog(
+                  child: Container(
+                    padding: EdgeInsets.all(20),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text('Verify email and password sign up, also check if email isnt already used', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+                        SizedBox(height: 20),
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const HomePage()),
+                            );
+                          }, 
+                          child: Text('Continue to Home')
+                        ),
+                      ],
+                    ),
+                  ),
+                )
+              ),
+              
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
                 foregroundColor: Colors.white,
@@ -158,8 +177,31 @@ class _SignUpPageState extends State<SignUpPage>{
             SizedBox(height:20),
             Text("or"),
             SizedBox(height:20),
-            ElevatedButton.icon(onPressed: (){
-              }, 
+            ElevatedButton.icon(
+              onPressed: () => showDialog<String>(
+                context: context, 
+                builder: (BuildContext context) => Dialog(
+                  child: Container(
+                    padding: EdgeInsets.all(20),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text('Verify google sign up info with firebase', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+                        SizedBox(height: 20),
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const HomePage()),
+                            );
+                          }, 
+                          child: Text('Continue to Home')
+                        ),
+                      ],
+                    ),
+                  ),
+                )
+              ),
               label: Text('Sign up with Google'), icon: Image.asset('assets/icons/googleloginlogo.jpg', height:54, width:54,),
             ),
           ],
@@ -215,12 +257,31 @@ class _SigninPageState extends State<SigninPage>{
             ),
             SizedBox(height: 20),
             ElevatedButton(
-              onPressed: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const HomePage()),
-                );
-              },
+              onPressed: () => showDialog<String>(
+                context: context, 
+                builder: (BuildContext context) => Dialog(
+                  child: Container(
+                    padding: EdgeInsets.all(20),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text('Check whether login information is correct and then give login successful information', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+                        SizedBox(height: 20),
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const HomePage()),
+                            );
+                          }, 
+                          child: Text('Continue to Home')
+                        ),
+                      ],
+                    ),
+                  ),
+                )
+              ),
+              
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
                 foregroundColor: Colors.white,
@@ -235,8 +296,31 @@ class _SigninPageState extends State<SigninPage>{
             Text("or"),
             SizedBox(height:20),
 
-            ElevatedButton.icon(onPressed: (){
-              }, 
+            ElevatedButton.icon(
+              onPressed: () => showDialog<String>(
+                context: context, 
+                builder: (BuildContext context) => Dialog(
+                  child: Container(
+                    padding: EdgeInsets.all(20),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text('Check whether login information is correct and then give login successful information', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+                        SizedBox(height: 20),
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const HomePage()),
+                            );
+                          }, 
+                          child: Text('Continue to Home')
+                        ),
+                      ],
+                    ),
+                  ),
+                )
+              ),
               label: Text('Sign in with Google'), icon: Image.asset('assets/icons/googleloginlogo.jpg', height:54, width:54,),
             ),
           ],
