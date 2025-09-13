@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'daniel/test_ai.dart';
-import 'matthew/test_backend.dart';
-
 const Color primaryColor = Color.fromARGB(255, 37, 49, 140);
 const Color secondaryColor = Color.fromARGB(240, 120, 143, 205);
 const Color accentColor = Color(0xFF43A047);
@@ -359,25 +356,12 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: Center(
+      body: const Center(
         child: Column(
           
           children: [
             
-            // This is where Daniel's test thing will go
-            TestAI(label: "AI", onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text("Test - AI")),
-                );
-            }),
-
-            // This is where Matthew's test thing will go
-            TestBackend(label: "Backend", onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text("Test - Backend")),
-                );
-            })
-
+            
           ],
         ),
       ),
